@@ -29,13 +29,13 @@ def getProductInfoPricesURL(offer_id=[], product_id=[], last_id='', limit=50):
     body = json.dumps(body)
     return body
 
-def getPostingFBOListOrdersDeliveredURL(dir='ASC', dateStart='', status='delivered', dateEnd='', limit=1000, offset=0):
+def getPostingFBOListOrdersDeliveredURL(dir='ASC', dateStart='', status='', dateEnd='', limit=1000, offset=0):
     body = {'dir': dir, 'filter': {'since': dateStart, 'status': status, 'to': dateEnd}, 'limit': limit, 'offset': offset,'translit': True, 'with': {'analytics_data': True, 'financial_data': True }}
     body = json.dumps(body)
     return body
 
 
-def getOrderUrl(dateStart='', dateEnd='', transaction_type='orders', page_size=50):
+def getOrderUrl(dateStart='', dateEnd='', transaction_type='all', page_size=50):
     body = {'filter':{'date':{'from': dateStart, 'to': dateEnd}, 'operation_type': [], 'transaction_type':  transaction_type}, 'page': 1, 'page_size': page_size}
     body = json.dumps(body)
     return body

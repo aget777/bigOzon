@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2b05772-dae6-47a9-80aa-6e84afea0dfb" name="Changes" comment="Add userStatus">
-      <change afterPath="$PROJECT_DIR$/Services/FinanceTotals_10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/PostingFBOListOrdersDelivered_07.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/PostingFBSListOrdersDelivered_08.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ProductInfoListStocks_02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ProductInfoPrices_03.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ProductInfoPricesСommissions_04.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ProductInfoStock_01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ProductInfolistAll_06.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Productlist_05.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/StringBuilder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/StringBuilder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Constans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ResponseModels.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ResponseModels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/ExcelRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/ExcelRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/FileRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/FileRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/AnalyticsService.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/OrderService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/FinanceTransactionListOrders_09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/PostsService.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordersTest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultOzon.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

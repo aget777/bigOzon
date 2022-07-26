@@ -18,10 +18,12 @@ if __name__ == '__main__':
 
     infoStocksModels = ProductInfoStock_01.getProductInfoStocks()
     infoStocksListModels = ProductInfoListStocks_02.getProductInfoListStocks()
-    productInfoPricesModels = ProductInfoPrices_03.getProductInfoPrices()
-    productInfoPricesCommissionsModels = ProductInfoPricesСommissions_04.getProductInfoPricesCommissionsModels()
-    productlistModels = Productlist_05.getProductlist()
-    productInfolistAllModels = ProductInfolistAll_06.getProductInfolistAll()
+
+    # productInfoPricesModels = ProductInfoPrices_03.getProductInfoPrices()
+    # productInfoPricesCommissionsModels = ProductInfoPricesСommissions_04.getProductInfoPricesCommissionsModels()
+    # productlistModels = Productlist_05.getProductlist()
+    # productInfolistAllModels = ProductInfolistAll_06.getProductInfolistAll()
+
     postingFBOListOrdersDeliveredModels = PostingFBOListOrdersDelivered_07.getPostingFBOListOrdersDelivered()
     postingFBSListOrdersDeliveredModels = PostingFBSListOrdersDelivered_08.getPostingFBSListOrdersDelivered()
     financeTransactionListOrdersModels = FinanceTransactionListOrders_09.getFinanceTransactionListOrders()
@@ -39,10 +41,12 @@ if __name__ == '__main__':
 
     ExcelRepository.writeInfoStocksDataFramesInExcel(infoStocksModels)
     ExcelRepository.writeInfoListStocksDataFramesInExcel(infoStocksListModels)
-    ExcelRepository.writeProductInfoPricesDataFramesInExcel(productInfoPricesModels)
-    ExcelRepository.writeProductInfoPricesCommissionsDataFramesInExcel(productInfoPricesCommissionsModels)
-    ExcelRepository.writeProductlistDataFramesInExcel(productlistModels)
-    ExcelRepository.writeProductInfolistAllDataFramesInExcel(productInfolistAllModels)
+
+    # ExcelRepository.writeProductInfoPricesDataFramesInExcel(productInfoPricesModels)
+    # ExcelRepository.writeProductInfoPricesCommissionsDataFramesInExcel(productInfoPricesCommissionsModels)
+    # ExcelRepository.writeProductlistDataFramesInExcel(productlistModels)
+    # ExcelRepository.writeProductInfolistAllDataFramesInExcel(productInfolistAllModels)
+
     ExcelRepository.writePostingFBOListOrdersDeliveredDataFramesInExcel(postingFBOListOrdersDeliveredModels)
     ExcelRepository.writePostingFBSListOrdersDeliveredDataFramesInExcel(postingFBSListOrdersDeliveredModels)
     ExcelRepository.writeFinanceTransactionListOrdersDataFramesInExcel(financeTransactionListOrdersModels)
