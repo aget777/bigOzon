@@ -14,9 +14,9 @@ def getFinanceTransactionListOrders():
     financeTransactionListOrdersModels = []
 
 
-    dateStart = '2022-07-20T00:00:00.000Z'
-    dateEnd = '2022-07-22T00:00:00.000Z'
-    page_size = 50
+    dateStart = '2022-06-01T00:00:00.000Z'
+    dateEnd = '2022-06-05T00:00:00.000Z'
+    page_size = 1000
     baseURL = 'https://api-seller.ozon.ru'
     orderUrl = '/v3/finance/transaction/list'
     head = stringBuilder.getHeaders()

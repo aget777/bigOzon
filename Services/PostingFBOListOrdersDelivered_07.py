@@ -14,13 +14,14 @@ def getPostingFBOListOrdersDelivered():
     postingFBOListOrdersDeliveredModels = []
 
 
-    dateStart = '2022-07-22T00:00:00.000Z'
-    dateEnd = '2022-07-24T00:00:00.000Z'
-    limit = 5
+    dateStart = '2022-07-25T00:00:00.000Z'
+    dateEnd = '2022-07-30T00:00:00.000Z'
+    status = ''
+    limit = 1000
     baseURL = 'https://api-seller.ozon.ru'
     orderUrl = '/v2/posting/fbo/list'
     head = stringBuilder.getHeaders()
-    body = stringBuilder.getPostingFBOListOrdersDeliveredURL(dateStart=dateStart, dateEnd=dateEnd, limit=limit)
+    body = stringBuilder.getPostingFBOListOrdersDeliveredURL(dateStart=dateStart, dateEnd=dateEnd, status=status, limit=limit)
 
     i = 0
     while i < 1:
