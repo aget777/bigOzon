@@ -254,12 +254,22 @@ class FinanceTransactionListOrdersModels:
         self.postingPostingNumber = json['posting']['posting_number']  # Номер поставки
         self.postingOrderDate = json['posting']['order_date']  # Дата заказа
         self.postingWarehouseId = json['posting']['warehouse_id']  # Идентификатор склада
-        self.itemsName = json['items']#[0]['name']  # Наименование
-        self.itemsSku = json['items']#[0]['sku']  #  Идентификатор товара в системе Ozon
-        self.servicesDelivToCustomerName = json['services'] #[0]['name']  #  Название Сервисный сбор маркет плейса за доставку
-        self.servicesDelivToCustomerPrice = json['services']#[0]['price']  # Цена Сервисный сбор маркет плейса за доставку
-        self.servicesDirectFlowLogisticName = json['services']#[1]['name']  # Название Прямые расходы на доставку
-        self.servicesDirectFlowLogisticPrice = json['services']#[1]['price']  # Цена Прямые расходы на доставку
+        self.itemsName = self._getFirstOrDefault(json['items'], 'name') #[0]['name']  # Наименование
+        self.itemsSku = self._getFirstOrDefault(json['items'], 'sku') #[0]['sku']  #  Идентификатор товара в системе Ozon
+        self.servicesDelivToCustomerName = self._getAdditionalParams(json['services'], 'name', 0) #[0]['name']  #  Название Сервисный сбор маркет плейса за доставку
+        self.servicesDelivToCustomerPrice = self._getAdditionalParams(json['services'], 'price', 0) #[0]['price']  # Цена Сервисный сбор маркет плейса за доставку
+        self.servicesDirectFlowLogisticName = self._getAdditionalParams(json['services'], 'name', 1) #[1]['name']  # Название Прямые расходы на доставку
+        self.servicesDirectFlowLogisticPrice = self._getAdditionalParams(json['services'], 'price', 1) #[1]['price']  # Цена Прямые расходы на доставку
+
+    # Две очень простые и очень мощные функции
+    def _getFirstOrDefault(self, items, itemName):
+        result = []
+        for item in items:
+            result.append(item[itemName])
+        return result
+
+    def _getAdditionalParams(self, services, itemName, index):
+        return services[index][itemName] if len(services) > index else ''
 
 
 
