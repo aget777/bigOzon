@@ -53,7 +53,7 @@ class InfoStockModelList:
         self.statusStateUpdatedAt = json['status']['state_updated_at']        # Дата обновления
         self.statusDeclineReasons = json['status']['decline_reasons']        # Причины отказа
         self.statusItemErrors = json['status']['item_errors']                # Ошибки при создании
-        self.images = json['images'][0]                                      # Изображение
+        self.images = json['images']                                         # Изображение
         self.colorImage = json['color_image']                                # Цветное изображение
         self.images360 = json['images360']                                   # Изображения на 360
         self.primaryImage = json['primary_image']                            # Главное изображение

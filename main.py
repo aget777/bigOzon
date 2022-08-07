@@ -15,6 +15,9 @@ from Repositories import ExcelRepository
 
 if __name__ == '__main__':
 
+    offerIds = ProductInfoStock_01.getOfferIds()
+    infoStocksByOfferIds = ProductInfoListStocks_02.getProductInfosByOfferIds(offerIds)
+    ExcelRepository.writeInfoListStocksDataFramesInExcel(infoStocksByOfferIds)
 
     infoStocksModels = ProductInfoStock_01.getProductInfoStocks()
     # infoStocksListModels = ProductInfoListStocks_02.getProductInfoListStocks()

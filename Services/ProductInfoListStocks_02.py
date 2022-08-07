@@ -23,7 +23,39 @@ def getProductInfoListStocks():
     head = stringBuilder.getHeaders()
     body = stringBuilder.getInfoListStocks(offer_id=offer_id)
 
+    i = 0
+    while i < 1:
+        # Подумать над асинхронным запросом
+        url = baseURL + orderUrl
+        # print(url)
+        # print(head)
+        # print(body)
+        response = requests.post(url, headers=head, data=body)
 
+        # Логировать ошибки!
+        # print(response.status_code)
+        if response.status_code != 200:
+            break
+        # print(response.json())
+        jsonResults = response.json()['result']['items']
+        # print(jsonResults)
+        # Логировать такие случаи, чтобы понимать, сколько записей выгрузили
+        if not jsonResults:
+            break
+
+        infoStocksListModels += _mapModels(jsonResults)
+
+        print(len(jsonResults))
+        i += 1
+    return infoStocksListModels
+
+def getProductInfosByOfferIds(offerIds):
+    infoStocksListModels = []
+
+    baseURL = 'https://api-seller.ozon.ru'
+    orderUrl = '/v2/product/info/list'
+    head = stringBuilder.getHeaders()
+    body = stringBuilder.getInfoListStocks(offer_id=offerIds)
 
     i = 0
     while i < 1:
