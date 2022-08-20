@@ -15,20 +15,24 @@ from Repositories import ExcelRepository
 
 if __name__ == '__main__':
     offerIds = ProductInfoStock_01.getOfferIds()
+    infoStocksModels = ProductInfoStock_01.getProductInfoStocks()  # блок 1 список товаров и характеристик
+    ExcelRepository.writeInfoStocksDataFramesInExcel(infoStocksModels)  # блок 1 список осатков товаров
+
     infoStocksByOfferIds = ProductInfoListStocks_02.getProductInfosByOfferIds(offerIds) # блок 1 список товаров и характеристик
     ExcelRepository.writeInfoListStocksDataFramesInExcel(infoStocksByOfferIds) # блок 1 список товаров и характеристик
 
-    infoStocksModels = ProductInfoStock_01.getProductInfoStocks() # блок 1 список товаров и характеристик
+
 
     # infoStocksListModels = ProductInfoListStocks_02.getProductInfoListStocks() # старый файл не нужен
 
     postingFBOListOrdersDeliveredModels = PostingFBOListOrdersDelivered_07.getPostingFBOListOrdersDelivered()
+
     postingFBSListOrdersDeliveredModels = PostingFBSListOrdersDelivered_08.getPostingFBSListOrdersDelivered()
     financeTransactionListOrdersModels = FinanceTransactionListOrders_09.getFinanceTransactionListOrders()
     financeTotalsModels = FinanceTotals_10.getFinanceTotals()
 
 
-    # ExcelRepository.writeInfoStocksDataFramesInExcel(infoStocksModels) # блок 1 список товаров и характеристик
+
     # ExcelRepository.writeInfoListStocksDataFramesInExcel(infoStocksListModels)
 
     # ExcelRepository.writeProductInfoPricesDataFramesInExcel(productInfoPricesModels)                # не нужен
