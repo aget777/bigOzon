@@ -14,7 +14,7 @@ def getFinanceTotals():
     financeTotalsModels = []
 
 
-    dateStart = '2022-01-10T00:00:00.000Z'
+    dateStart = '2022-01-01T00:00:00.000Z'
     dateEnd = '2022-08-12T00:00:00.000Z'
     baseURL = 'https://api-seller.ozon.ru'
     orderUrl = '/v3/finance/transaction/totals'
