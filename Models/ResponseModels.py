@@ -3,15 +3,27 @@
 
 class InfoStockModel:
     def __init__(self, json) -> None:
-        self.productId = json['product_id']                                          # id товара
-        self.offerId = json['offer_id']                                              # ID товара в системе продавца — артикул
-        self.stockTypeFirst = json['stocks'][0]['type']                                # тип склада FBO
-        self.presentStockFirst = json['stocks'][0]['present']                          # количество на складе FBO
-        self.reservedStockFirst = json['stocks'][0]['reserved']                        # зарезирвированно на складе FBO
-        self.stockTypeSecond = json['stocks'][1]['type']                                # тип склада FBS
-        self.presentStockSecond = json['stocks'][1]['present']                          # количество на складе FBS
-        self.reservedStockSecond = json['stocks'][1]['reserved']                        # зарезирвированно на складе FBS
+        self.productId = json['product_id']                                                   # id товара
+        self.offerId = json['offer_id']                                                       # ID товара в системе продавца — артикул
+        self.stockTypeFirst = json['stocks'][0]['type']                                       # тип склада FBO
+        self.presentStockFirst = json['stocks'][0]['present']                                 # количество на складе FBO
+        self.reservedStockFirst = json['stocks'][0]['reserved']                               # зарезирвированно на складе FBO
+        # self.stockTypeSecond = json['stocks'][1]['type']                                    # тип склада FBS
+        self.stockTypeSecond = self._getAdditionalParams(json['stocks'], 'type', 1)           # тип склада FBS
+        # self.presentStockSecond = json['stocks'][1]['present']                              # количество на складе FBS
+        self.presentStockSecond = self._getAdditionalParams(json['stocks'], 'present', 1)     # количество на складе FBS
+        # self.reservedStockSecond = json['stocks'][1]['reserved']                            # зарезирвированно на складе FBS
+        self.reservedStockSecond = self._getAdditionalParams(json['stocks'], 'reserved', 1)   # зарезирвированно на складе FBS
 
+ # Две очень простые и очень мощные функции
+    def _getFirstOrDefault(self, items, itemName):
+        result = []
+        for item in items:
+            result.append(item[itemName])
+        return result
+
+    def _getAdditionalParams(self, services, itemName, index):
+        return services[index][itemName] if len(services) > index else ''
 
 class InfoStockModelList:
     def __init__(self, json) -> None:
@@ -53,7 +65,7 @@ class InfoStockModelList:
         self.statusStateUpdatedAt = json['status']['state_updated_at']        # Дата обновления
         self.statusDeclineReasons = json['status']['decline_reasons']        # Причины отказа
         self.statusItemErrors = json['status']['item_errors']                # Ошибки при создании
-        self.images = json['images'][0]                                      # Изображение
+        self.images = json['images']                                         # Изображение
         self.colorImage = json['color_image']                                # Цветное изображение
         self.images360 = json['images360']                                   # Изображения на 360
         self.primaryImage = json['primary_image']                            # Главное изображение
@@ -254,12 +266,22 @@ class FinanceTransactionListOrdersModels:
         self.postingPostingNumber = json['posting']['posting_number']  # Номер поставки
         self.postingOrderDate = json['posting']['order_date']  # Дата заказа
         self.postingWarehouseId = json['posting']['warehouse_id']  # Идентификатор склада
-        self.itemsName = json['items']#[0]['name']  # Наименование
-        self.itemsSku = json['items']#[0]['sku']  #  Идентификатор товара в системе Ozon
-        self.servicesDelivToCustomerName = json['services'] #[0]['name']  #  Название Сервисный сбор маркет плейса за доставку
-        self.servicesDelivToCustomerPrice = json['services']#[0]['price']  # Цена Сервисный сбор маркет плейса за доставку
-        self.servicesDirectFlowLogisticName = json['services']#[1]['name']  # Название Прямые расходы на доставку
-        self.servicesDirectFlowLogisticPrice = json['services']#[1]['price']  # Цена Прямые расходы на доставку
+        self.itemsName = self._getFirstOrDefault(json['items'], 'name') #[0]['name']  # Наименование
+        self.itemsSku = self._getFirstOrDefault(json['items'], 'sku') #[0]['sku']  #  Идентификатор товара в системе Ozon
+        self.servicesDelivToCustomerName = self._getAdditionalParams(json['services'], 'name', 0) #[0]['name']  #  Название Сервисный сбор маркет плейса за доставку
+        self.servicesDelivToCustomerPrice = self._getAdditionalParams(json['services'], 'price', 0) #[0]['price']  # Цена Сервисный сбор маркет плейса за доставку
+        self.servicesDirectFlowLogisticName = self._getAdditionalParams(json['services'], 'name', 1) #[1]['name']  # Название Прямые расходы на доставку
+        self.servicesDirectFlowLogisticPrice = self._getAdditionalParams(json['services'], 'price', 1) #[1]['price']  # Цена Прямые расходы на доставку
+
+    # Две очень простые и очень мощные функции
+    def _getFirstOrDefault(self, items, itemName):
+        result = []
+        for item in items:
+            result.append(item[itemName])
+        return result
+
+    def _getAdditionalParams(self, services, itemName, index):
+        return services[index][itemName] if len(services) > index else ''
 
 
 

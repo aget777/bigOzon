@@ -15,8 +15,8 @@ def getPostingFBSListOrdersDelivered():
 
 
     dateStart = '2021-12-01T00:00:00.000Z'
-    dateEnd = '2022-07-25T00:00:00.000Z'
-    status = 'delivered'
+    dateEnd = '2022-08-12T00:00:00.000Z'
+    status = ''
     limit = 1000
     baseURL = 'https://api-seller.ozon.ru'
     orderUrl = '/v3/posting/fbs/list'

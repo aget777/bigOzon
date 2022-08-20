@@ -3,21 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e2b05772-dae6-47a9-80aa-6e84afea0dfb" name="Changes" comment="Add userStatus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/StringBuilder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/StringBuilder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/ResponseModels.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ResponseModels.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/FinanceTotals_10.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/FinanceTotals_10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/FinanceTransactionListOrders_09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/FinanceTransactionListOrders_09.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/PostingFBOListOrdersDelivered_07.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/PostingFBOListOrdersDelivered_07.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/PostingFBSListOrdersDelivered_08.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/PostingFBSListOrdersDelivered_08.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/financeTotals.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/financeTransactionOrders.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infoListStocks.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/infoListStocks.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infoStocks.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/infoStocks.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ProductInfoListStocks_02.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ProductInfoListStocks_02.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postingFBOListOrdersDelivered.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/postingFBSListOrdersDelivered.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productInfoPrices.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productInfoPricesCommissions.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productInfolistAll.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/productlist.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +36,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Lenovo/Downloads/01_Текущие/26_Бизнес_Круче/ozonProject",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/00_Downloads/02_Metrika_API_02_08/yandesxMetrika&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.main">
     <configuration name="AnalyticsService" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WildberriesProject" />

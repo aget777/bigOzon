@@ -19,8 +19,6 @@ def getProductInfoStocks():
     head = stringBuilder.getHeaders()
     body = stringBuilder.getProductInfoPricesURL()
 
-
-
     i = 0
     while i < 1:
         # Подумать над асинхронным запросом
@@ -46,6 +44,15 @@ def getProductInfoStocks():
         print(len(jsonResults))
         i += 1
     return infoStocksV3Models
+
+def getOfferIds():
+    productInfoStocks = getProductInfoStocks()
+    offerIds = []
+    for productInfoStock in productInfoStocks:
+        offerIds.append(productInfoStock.offerId)
+
+    return offerIds
+
 
 # На первое время сойдет
 # Почитать про мапперы и конвертацию из json в model
