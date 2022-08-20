@@ -24,7 +24,7 @@ def getInfoListStocks(offer_id=[], product_id=[], sku=[]):
     return body
 
 
-def getProductInfoPricesURL(offer_id=[], product_id=[], last_id='', limit=50):
+def getProductInfoPricesURL(offer_id=[], product_id=[], last_id='', limit=1000):
     body = {'filter':{'offer_id': offer_id, 'product_id': product_id, 'visibility': 'ALL'}, 'last_id': last_id, 'limit': limit}
     body = json.dumps(body)
     return body
@@ -35,7 +35,7 @@ def getPostingFBOListOrdersDeliveredURL(dir='ASC', dateStart='', status='', date
     return body
 
 
-def getOrderUrl(dateStart='', dateEnd='', transaction_type='all', page_size=50):
+def getOrderUrl(dateStart='', dateEnd='', transaction_type='all', page_size=1000):
     body = {'filter':{'date':{'from': dateStart, 'to': dateEnd}, 'operation_type': [], 'transaction_type':  transaction_type}, 'page': 1, 'page_size': page_size}
     body = json.dumps(body)
     return body

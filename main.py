@@ -15,19 +15,20 @@ from Repositories import ExcelRepository
 
 if __name__ == '__main__':
     offerIds = ProductInfoStock_01.getOfferIds()
-    infoStocksByOfferIds = ProductInfoListStocks_02.getProductInfosByOfferIds(offerIds)
-    ExcelRepository.writeInfoListStocksDataFramesInExcel(infoStocksByOfferIds)
+    infoStocksByOfferIds = ProductInfoListStocks_02.getProductInfosByOfferIds(offerIds) # блок 1 список товаров и характеристик
+    ExcelRepository.writeInfoListStocksDataFramesInExcel(infoStocksByOfferIds) # блок 1 список товаров и характеристик
 
-    infoStocksModels = ProductInfoStock_01.getProductInfoStocks()
-    # infoStocksListModels = ProductInfoListStocks_02.getProductInfoListStocks()
+    infoStocksModels = ProductInfoStock_01.getProductInfoStocks() # блок 1 список товаров и характеристик
 
-    # postingFBOListOrdersDeliveredModels = PostingFBOListOrdersDelivered_07.getPostingFBOListOrdersDelivered()
-    # postingFBSListOrdersDeliveredModels = PostingFBSListOrdersDelivered_08.getPostingFBSListOrdersDelivered()
-    # financeTransactionListOrdersModels = FinanceTransactionListOrders_09.getFinanceTransactionListOrders()
-    # financeTotalsModels = FinanceTotals_10.getFinanceTotals()
+    # infoStocksListModels = ProductInfoListStocks_02.getProductInfoListStocks() # старый файл не нужен
+
+    postingFBOListOrdersDeliveredModels = PostingFBOListOrdersDelivered_07.getPostingFBOListOrdersDelivered()
+    postingFBSListOrdersDeliveredModels = PostingFBSListOrdersDelivered_08.getPostingFBSListOrdersDelivered()
+    financeTransactionListOrdersModels = FinanceTransactionListOrders_09.getFinanceTransactionListOrders()
+    financeTotalsModels = FinanceTotals_10.getFinanceTotals()
 
 
-    ExcelRepository.writeInfoStocksDataFramesInExcel(infoStocksModels)
+    # ExcelRepository.writeInfoStocksDataFramesInExcel(infoStocksModels) # блок 1 список товаров и характеристик
     # ExcelRepository.writeInfoListStocksDataFramesInExcel(infoStocksListModels)
 
     # ExcelRepository.writeProductInfoPricesDataFramesInExcel(productInfoPricesModels)                # не нужен
@@ -35,9 +36,9 @@ if __name__ == '__main__':
     # ExcelRepository.writeProductlistDataFramesInExcel(productlistModels)                # не нужен
     # ExcelRepository.writeProductInfolistAllDataFramesInExcel(productInfolistAllModels)                # не нужен
 
-    # ExcelRepository.writePostingFBOListOrdersDeliveredDataFramesInExcel(postingFBOListOrdersDeliveredModels)
-    # ExcelRepository.writePostingFBSListOrdersDeliveredDataFramesInExcel(postingFBSListOrdersDeliveredModels)
-    # ExcelRepository.writeFinanceTransactionListOrdersDataFramesInExcel(financeTransactionListOrdersModels)
-    # ExcelRepository.writeFinanceTotalsDataFramesInExcel(financeTotalsModels)
+    ExcelRepository.writePostingFBOListOrdersDeliveredDataFramesInExcel(postingFBOListOrdersDeliveredModels)
+    ExcelRepository.writePostingFBSListOrdersDeliveredDataFramesInExcel(postingFBSListOrdersDeliveredModels)
+    ExcelRepository.writeFinanceTransactionListOrdersDataFramesInExcel(financeTransactionListOrdersModels)
+    ExcelRepository.writeFinanceTotalsDataFramesInExcel(financeTotalsModels)
 
 

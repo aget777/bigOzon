@@ -3,15 +3,27 @@
 
 class InfoStockModel:
     def __init__(self, json) -> None:
-        self.productId = json['product_id']                                          # id товара
-        self.offerId = json['offer_id']                                              # ID товара в системе продавца — артикул
-        self.stockTypeFirst = json['stocks'][0]['type']                                # тип склада FBO
-        self.presentStockFirst = json['stocks'][0]['present']                          # количество на складе FBO
-        self.reservedStockFirst = json['stocks'][0]['reserved']                        # зарезирвированно на складе FBO
-        self.stockTypeSecond = json['stocks'][1]['type']                                # тип склада FBS
-        self.presentStockSecond = json['stocks'][1]['present']                          # количество на складе FBS
-        self.reservedStockSecond = json['stocks'][1]['reserved']                        # зарезирвированно на складе FBS
+        self.productId = json['product_id']                                                   # id товара
+        self.offerId = json['offer_id']                                                       # ID товара в системе продавца — артикул
+        self.stockTypeFirst = json['stocks'][0]['type']                                       # тип склада FBO
+        self.presentStockFirst = json['stocks'][0]['present']                                 # количество на складе FBO
+        self.reservedStockFirst = json['stocks'][0]['reserved']                               # зарезирвированно на складе FBO
+        # self.stockTypeSecond = json['stocks'][1]['type']                                    # тип склада FBS
+        self.stockTypeSecond = self._getAdditionalParams(json['stocks'], 'type', 1)           # тип склада FBS
+        # self.presentStockSecond = json['stocks'][1]['present']                              # количество на складе FBS
+        self.presentStockSecond = self._getAdditionalParams(json['stocks'], 'present', 1)     # количество на складе FBS
+        # self.reservedStockSecond = json['stocks'][1]['reserved']                            # зарезирвированно на складе FBS
+        self.reservedStockSecond = self._getAdditionalParams(json['stocks'], 'reserved', 1)   # зарезирвированно на складе FBS
 
+ # Две очень простые и очень мощные функции
+    def _getFirstOrDefault(self, items, itemName):
+        result = []
+        for item in items:
+            result.append(item[itemName])
+        return result
+
+    def _getAdditionalParams(self, services, itemName, index):
+        return services[index][itemName] if len(services) > index else ''
 
 class InfoStockModelList:
     def __init__(self, json) -> None:

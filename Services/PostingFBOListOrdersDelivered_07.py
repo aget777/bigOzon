@@ -14,8 +14,8 @@ def getPostingFBOListOrdersDelivered():
     postingFBOListOrdersDeliveredModels = []
 
 
-    dateStart = '2022-07-25T00:00:00.000Z'
-    dateEnd = '2022-07-30T00:00:00.000Z'
+    dateStart = '2022-07-01T00:00:00.000Z'
+    dateEnd = '2022-08-17T00:00:00.000Z'
     status = ''
     limit = 1000
     baseURL = 'https://api-seller.ozon.ru'
